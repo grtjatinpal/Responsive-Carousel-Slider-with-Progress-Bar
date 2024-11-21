@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Slider</title>
+    <style>
+        body {
+            background-color: #001334;
+        }
+
+        .items-center{
+            align-items: center;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .justify-around {
+            justify-content: space-around;
+        }
+
+
+
+        .slider-container {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            flex: 0 0 auto;
+            width: calc(100% / 3);
+            box-sizing: border-box;
+            padding: 20px;
+            font-weight: 500;
+            border-radius: 12px;
+        }
+
+        .slide img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .slide h4 {
+            margin-top: 10px;
+            font-size: 1.2em;
+            text-align: center;
+            color: white;
+        }
+
+        .slide p {
+            font-size: 1em;
+            color: white;
+            text-align: center;
+        }
+
+        .progress-bar {
+            width: 70%;
+            background-color: #e0e0e0;
+            border-radius: 25px;
+            height: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+            background-color: goldenrod;
+            transition: width 0.5s ease-in-out;
+        }
+
+
+        .slide-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: xx-large;
+            gap: 20px;
+            cursor: pointer;
+        }
+
+        .slide:hover {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            background-color: rgb(66 134 245 / 30%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slider-container">
+        <div class="slides">
+
+            <div class="slide">
+                <img src="https://globalmatrixsolution.com//wp-content/uploads/2024/10/asian-employees-1024x576.jpg"
+                    alt="On-Demand">
+                <h4>Demand-Based</h4>
+                <p>We specialize in developing product prototypes for a wide range of on-demand applications. Whether
+                    it’s
+                    ice cream and flower delivery, pharmacy and grocery delivery, taxis, dating, education, or laundry
+                    delivery, we provide tailored solutions that meet your business needs. Our team ensures each app is
+                    designed for seamless user experience, helping businesses deliver high-quality service and
+                    convenience
+                    to their customers.
+
+                </p>
+            </div>
+
+            <div class="slide">
+                <img src="https://globalmatrixsolution.com//wp-content/uploads/2024/10/asian-employees-1024x576.jpg"
+                    alt="On-Demand">
+                <h4>Real Estate</h4>
+                <p>
+                    Get mobile app development services tailored for the real estate industry. We offer solutions for
+                    property management, rent management, property listings, auction apps, metaverse real estate apps,
+                    and
+                    channel partner management apps. Our expert team creates custom mobile applications designed to
+                    streamline real estate operations, enhance user experiences, and drive business growth in the
+                    competitive market.
+                </p>
+            </div>
+
+            <div class="slide">
+                <img src="https://globalmatrixsolution.com//wp-content/uploads/2024/10/asian-employees-1024x576.jpg"
+                    alt="On-Demand">
+                <h4>Social Networks</h4>
+                <p>
+                    To help you start a social media business, we specialize in creating upscale social media platforms.
+                    Our
+                    team develops easy-to-use apps for social connection, including Candy AI, Tinder clones,
+                    Bumble-style
+                    dating apps, Nextdoor apps, and bespoke dating platforms. We design custom solutions tailored to
+                    your
+                    business vision, ensuring seamless user experiences and engaging features that foster social
+                    interaction.
+
+
+                </p>
+            </div>
+
+            <div class="slide">
+                <img src="https://globalmatrixsolution.com//wp-content/uploads/2024/10/asian-employees-1024x576.jpg"
+                    alt="On-Demand">
+                <h4>The Blockehain App</h4>
+                <p>
+                    We offer a wide range of blockchain mobile app development services, including solutions for casino
+                    games, social networking, supply chain management, healthcare, e-commerce, and cryptocurrency
+                    trading.
+                    Our team integrates blockchain technology into your mobile apps, enhancing security, transparency,
+                    and
+                    functionality to meet the demands of modern businesses.
+                </p>
+            </div>
+
+            <div class="slide">
+                <img src="https://globalmatrixsolution.com//wp-content/uploads/2024/10/asian-employees-1024x576.jpg"
+                    alt="On-Demand">
+                <h4>Automobile</h4>
+                <p>
+                    We provide mobile applications for the automotive industry, including business taxi apps, on-demand
+                    bike
+                    booking, and ride-hailing solutions like Lyft and Uber. As a leading mobile app development company,
+                    Global Matrix Solution specializes in creating high-performance automotive apps that enhance user
+                    experience and streamline transportation services.
+
+                </p>
+            </div>
+
+            <div class="slide">
+                <img src="https://globalmatrixsolution.com//wp-content/uploads/2024/10/asian-employees-1024x576.jpg"
+                    alt="On-Demand">
+                <h4>Ecommerce</h4>
+                <p>
+                    To build a high-end e-commerce application similar to platforms like Amazon, eBay, Walmart, and
+                    Shopify,
+                    partner with our dedicated mobile app developers. We help you create a seamless and feature-rich
+                    online
+                    store that attracts investors and builds a substantial user base, driving growth and success for
+                    your
+                    e-commerce business.
+                </p>
+            </div>
+
+            <div class="slide">
+                <img src="https://globalmatrixsolution.com//wp-content/uploads/2024/10/asian-employees-1024x576.jpg"
+                    alt="On-Demand">
+                <h4>Gas & Qil</h4>
+                <p>
+                    Get a real-time and IoT-integrated mobile application for the oil and gas industry to efficiently
+                    manage
+                    inventory, fleet, and production output. Our team of expert mobile app developers specializes in
+                    creating customized solutions that streamline operations and improve efficiency for oil and gas
+                    businesses.
+                </p>
+            </div>
+
+            <div class="slide">
+                <img src="https://globalmatrixsolution.com//wp-content/uploads/2024/10/asian-employees-1024x576.jpg"
+                    alt="On-Demand">
+                <h4>Finance & Banking</h4>
+                <p>
+                    Stay ahead in the banking and finance industry with mobile banking apps, loan management apps,
+                    mobile
+                    payment solutions, insurance apps, trading apps, and neo-banking platforms. Our expert developers
+                    specialize in creating tailored financial and banking apps that offer security, ease of use, and
+                    innovative features to meet the needs of modern businesses and their customers.
+                </p>
+            </div>
+
+            <div class="slide">
+                <img src="https://globalmatrixsolution.com//wp-content/uploads/2024/10/asian-employees-1024x576.jpg"
+                    alt="On-Demand">
+                <h4>Medical Care</h4>
+                <p>
+                    Launch your company in the medical field with easy-to-use healthcare applications. Global Matrix
+                    Solution specializes in developing hospital administration apps, on-demand doctor apps, medication
+                    delivery apps, and other healthcare solutions that streamline operations and enhance patient care,
+                    ensuring efficiency and convenience in the medical industry.
+
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="flex justify-around items-center">
+
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <div class="slide-btn">
+            <span class="prev" onclick="slideNext(-1)">←</span>
+            <span class="next" onclick="slideNext(1)">→</span>
+        </div>
+
+    </div>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const slideElements = document.querySelectorAll('.slide');
+        const progress = document.querySelector('.progress');
+        const totalSlides = slideElements.length;
+
+        let slidesVisible = 3; // Default visible slides
+        let maxIndex = totalSlides - slidesVisible;
+        let currentIndex = 0;
+
+        // Adjust slidesVisible based on screen size
+        function updateSlidesVisible() {
+            const screenWidth = window.innerWidth;
+
+            if (screenWidth >= 1024) {
+                slidesVisible = 3;
+            } else if (screenWidth >= 768) {
+                slidesVisible = 2;
+            } else {
+                slidesVisible = 1;
+            }
+
+            slideElements.forEach(slide => {
+                slide.style.width = `calc(100% / ${slidesVisible})`;
+            });
+
+            maxIndex = totalSlides - slidesVisible;
+            currentIndex = Math.min(currentIndex, maxIndex);
+            updateSlidePosition();
+        }
+
+        function updateSlidePosition() {
+            slides.style.transform = `translateX(-${currentIndex * (100 / slidesVisible)}%)`;
+            updateProgressBar();
+        }
+
+        function slideNext(direction) {
+            currentIndex += direction;
+
+            if (currentIndex < 0) {
+                currentIndex = 0;
+            } else if (currentIndex > maxIndex) {
+                currentIndex = 0;
+            }
+
+            updateSlidePosition();
+        }
+
+        function updateProgressBar() {
+            const progressPercentage = ((currentIndex + slidesVisible) / totalSlides) * 100;
+            progress.style.width = `${progressPercentage}%`;
+        }
+
+        // Auto-slide every 5 seconds
+        setInterval(() => {
+            slideNext(1);
+        }, 5000);
+
+        // Listen for resize events
+        window.addEventListener('resize', updateSlidesVisible);
+
+        // Initialize
+        updateSlidesVisible();
+    </script>
+
+</body>
+
+</html>
