@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Slider</title>
+    <title>Responsive Carousel Slider with Progress Bar</title>
     <style>
         body {
             background-color: #001334;
         }
 
-        .items-center{
+        .items-center {
             align-items: center;
         }
 
@@ -32,6 +32,7 @@
 
         .slides {
             display: flex;
+            margin: 20px;
             transition: transform 0.5s ease-in-out;
         }
 
@@ -42,6 +43,7 @@
             padding: 20px;
             font-weight: 500;
             border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .slide img {
@@ -90,8 +92,12 @@
         }
 
         .slide:hover {
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-            background-color: rgb(66 134 245 / 30%);
+            transform: scale(1.02);
+            /* Slight zoom effect */
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            /* Add shadow for better emphasis */
+            background-color: rgb(66, 134, 245, 0.3);
+            /* Optional: Add a subtle background color change */
         }
     </style>
 </head>
@@ -249,15 +255,17 @@
         const slides = document.querySelector('.slides');
         const slideElements = document.querySelectorAll('.slide');
         const progress = document.querySelector('.progress');
+        const sliderContainer = document.querySelector('.slider-container');
         const totalSlides = slideElements.length;
 
         let slidesVisible = 3; // Default visible slides
         let maxIndex = totalSlides - slidesVisible;
         let currentIndex = 0;
+        let slideInterval;
 
         // Adjust slidesVisible based on screen size
         function updateSlidesVisible() {
-            const screenWidth = window.innerWidth;
+            let screenWidth = window.innerWidth;
 
             if (screenWidth >= 1024) {
                 slidesVisible = 3;
@@ -294,20 +302,32 @@
         }
 
         function updateProgressBar() {
-            const progressPercentage = ((currentIndex + slidesVisible) / totalSlides) * 100;
+            let progressPercentage = ((currentIndex + slidesVisible) / totalSlides) * 100;
             progress.style.width = `${progressPercentage}%`;
         }
 
-        // Auto-slide every 5 seconds
-        setInterval(() => {
-            slideNext(1);
-        }, 5000);
+        // Auto-slide functionality
+        function startAutoSlide() {
+            slideInterval = setInterval(() => {
+                slideNext(1);
+            }, 5000);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(slideInterval);
+        }
+
+        // Listen for hover events
+        sliderContainer.addEventListener('mouseover', stopAutoSlide);
+        sliderContainer.addEventListener('mouseout', startAutoSlide);
 
         // Listen for resize events
         window.addEventListener('resize', updateSlidesVisible);
 
         // Initialize
         updateSlidesVisible();
+        startAutoSlide();
+
     </script>
 
 </body>
